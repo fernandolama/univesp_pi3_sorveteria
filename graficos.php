@@ -9,7 +9,7 @@
 <body>
     <h2>Vendas por mês</h2>
     <div style="width: 400px; height: 300px;">
-    <canvas id="graficoVendas"></canvas>
+        <canvas id="graficoVendas"></canvas>
     </div>
 
     <script>
@@ -63,7 +63,58 @@
         });
     </script>
 
-    <h2>Sabores Mais Vendidos</h2>
+    <h2>Ticket Médio por mês</h2>
+    <div style="width: 400px; height: 300px;">
+        <canvas id="graficoTicketMedio"></canvas>
+    </div>
+
+    <script>
+    fetch('ticketmedio_dados.php')
+    .then(response => response.json())
+    .then(data => {
+        const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+                    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+        const labelsFormatados = data.labels.map(label => {
+            let partes = label.split('-');
+            let mesIndex = parseInt(partes[1], 10) - 1;
+            return meses[mesIndex] ?? label;
+        });
+
+        const ctx = document.getElementById('graficoTicketMedio').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labelsFormatados,
+                datasets: [{
+                    label: 'Ticket Médio (R$)',
+                    data: data.dados.map(Number),
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.3 // Suaviza a curva do gráfico
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'R$'
+                        }
+                    }
+                }
+            }
+        });
+    });
+    </script>
+
+
+    <h2>Sabores mais vendidos</h2>
     <div style="width: 400px; height: 300px;">
         <canvas id="graficoSabores"></canvas>
     </div>
