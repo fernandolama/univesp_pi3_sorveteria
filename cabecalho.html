@@ -1,33 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrossel de Imagens</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery e Bootstrap JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-control {
+            background: none;
+        }
+        .sr-only {
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+</head>
+<body>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+    <!-- Indicadores -->
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-  
-    <!-- Wrapper for slides -->
+
+    <!-- Slides -->
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="carousel/folde1.jpg" alt="sorvete de morango">
-      </div>
-  
-      <div class="item">
-        <img src="carousel/folde1.jpg" alt="sorvete de abacaxi">
-      </div>
-  
-      <div class="item">
-        <img src="carousel/folde1.jpg" alt="sorvete de chocolate">
-      </div>
+        <div class="item active">
+            <img src="carousel/folde.jpg" alt="Maranata Sabor que repete">
+        </div>
+        <div class="item">
+            <img src="carousel/folde.jpg" alt="Maranata Sabor que repete">
+        </div>
+        <div class="item">
+            <img src="carousel/folde.jpg" alt="Maranata Sabor que repete">
+        </div>
     </div>
-  
-    <!-- Left and right controls -->
+
+    <!-- Controles -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Anterior</span>
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Anterior</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Próximo</span>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Próximo</span>
     </a>
-  </div>
+</div>
+
+</body>
+</html>

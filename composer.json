@@ -1,0 +1,16 @@
+{
+    "name": "gestao/sorveteria",
+    "description": "sorveteria Maranata",
+    "autoload": {
+        "psr-4": {
+            "Gestao\\Sorveteria\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edriano Moreira Santana",
+            "email": "5061430+edriano-softdesigner@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

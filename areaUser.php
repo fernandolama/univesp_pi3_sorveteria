@@ -33,12 +33,12 @@
 <body>	
 	
 	<?php
-	
 	session_start();
-
 	if (empty($_SESSION['id'])){
-
 		header('location:formLogon.php');
+	}else
+	{
+		$id_user = $_SESSION['id'];
 	}
 	
 	include 'conexao.php';	
@@ -69,10 +69,7 @@
 	</div>		
 	
 	<?php 
-	
-
 	while ($exibeVenda=$consultaVenda->fetch(PDO::FETCH_ASSOC)){
-
 		?>
 
 <div class="row" style="margin-block-start: 15px;">

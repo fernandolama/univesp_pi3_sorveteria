@@ -32,9 +32,7 @@
 <body>
 	
 <?php
-	
 	session_start();
-
     if (empty($_SESSION['adm']) || $_SESSION['adm']!=1){
 
       header('location:index.php'); 
@@ -43,7 +41,6 @@
 	include 'conexao.php';	
 	include 'nav.php';
 	include 'cabecalho.html';
-	
 	?>
 	
 	
@@ -55,7 +52,24 @@
 				
 				<h2>Área administrativa</h2>
 				
-				
+				<a href="graficos.php">			
+				<button class="btn btn-block btn-lg btn-primary">
+					
+					Exibir gráficos
+					
+				</button>
+					
+				</a>
+
+				<a href="atualizarBanco.php">			
+				<button class="btn btn-block btn-lg btn-primary">
+					
+					Atualizar dados do Sensor
+					
+				</button>
+					
+				</a>
+
 				<a href="formProduto.php">			
 				<button class="btn btn-block btn-lg btn-primary">
 					
@@ -72,14 +86,23 @@
 					
 				</button>
 				
-				
+                </a>
+				<a href="gestao_vendas.php">
 				<button type="submit" class="btn btn-block btn-lg btn-success">
 					
 					Vendas
 					
 				</button>
+                </a>
 				
 				
+				<a href="exibirDados.php">
+				<button type="submit" class="btn btn-block btn-lg btn-success">
+					
+					Monitoramento dos sensores
+					
+				</button>
+					
 				<a href="sair.php">
 				<button type="submit" class="btn btn-block btn-lg btn-danger">
 					

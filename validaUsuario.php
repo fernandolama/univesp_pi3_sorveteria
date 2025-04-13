@@ -1,13 +1,8 @@
 <?php
-
  session_start();
-
  include 'conexao.php';
-
  $recebe_email = $_POST['email'];
  $recebe_senha = $_POST['senha'];
-
-
  //echo $recebe_email.'<br>';
  //echo $recebe_senha.'<br>';
  $consulta = $conexao->query("SELECT id_user,email,senha,
@@ -26,12 +21,11 @@
      header('location:index.php');
      
   }
-  else {
-    
+  else { 
      $_SESSION['id']=$exibeUser['id_user'];
      $_SESSION['adm']=1;
      
-     header('location:index.php');
+     header('location:adm.php');
 
   }
   }

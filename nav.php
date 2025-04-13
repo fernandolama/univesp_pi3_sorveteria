@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
         <div class="container-fluid">
              <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,27 +63,21 @@
                     <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a>
                   </li>        
 
-                     <li><a href="#">Contato</a>
+                     <li><a href="formContato.php">Contato</a>
                      </li>
 
                       <?php
-                      
                           if(empty($_SESSION['id'])){
-
-                      
                       ?>
 
                      
                      <li><a href="formLogon.php"> <span class="glyphicon glyphicon-log-in"></span> Logon</a></li>
 
                        <?php
-
                             }  else {
-                              
                                if ($_SESSION['adm']==0){
                              $consulta_user=$conexao->query("SELECT nome FROM usuarios WHERE id_user='$_SESSION[id]'");
                              $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC);
-
                           ?>
                           
                           <li><a href="areaUser.php"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?> </a></li>
@@ -106,6 +100,4 @@
 
              </div>
         </div>
-
-
         </nav>
