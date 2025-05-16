@@ -33,57 +33,31 @@
 <body>	
 	
 	<?php
-	
 	session_start();
-	
 	if (empty($_SESSION['id'])){
 		
-		header('location:formLogon.php');
-		
+		header('location:formLogon.php');	
 	}
-
-	
 	include 'conexao.php';	
 	include 'nav.php';
-	include 'cabecalho.html';
-	
-	
-	if (!empty($_GET['id'])) {
-	
-	$id_prod=$_GET['id'];
-	
-	
+	include 'cabecalho.html';		
+	if (!empty($_GET['id'])) {	
+	$id_prod=$_GET['id'];	
 	if (!isset($_SESSION['carrinho'])) {
 		  $_SESSION['carrinho'] = array();
 	}
-
-
-	
-
 	if (!isset($_SESSION['carrinho'][$id_prod])) {
-
 		$_SESSION['carrinho'][$id_prod]=1;
 	}
 	
 	else {
 		  $_SESSION['carrinho'][$id_prod]+=1;
-
-	}
-		
-		include 'mostraCarrinho.php';
-		
-	} else {
-		
-		
-		
-		include 'mostraCarrinho.php';
-		
-		
 	}	
-	
+		include 'mostraCarrinho.php';	
+	} else {	
+		include 'mostraCarrinho.php';	
+	}	
 	?>
-	
-	
 	<div class="row text-center" style="margin-block-start: 15px;">
 		<h1>Total: R$ <?php echo number_format($total,2,',','.'); ?> </h1>
 	</div>

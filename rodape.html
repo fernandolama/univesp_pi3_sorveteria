@@ -1,15 +1,110 @@
-<footer class="container-fluid bg-4 text-center" style="background-color: #DDDADA; margin-top: 40px; padding-top: 50px; min-height: 400px;">
-	
-  <span class="fa fa-facebook" aria-hidden="true" style="font-size: 40px;"></span>
-  <span class="fa fa-twitter" aria-hidden="true" style="font-size: 40px; margin-left: 20px;"></span>
-  <span class="fa fa-youtube" aria-hidden="true" style="font-size: 40px; margin-left: 20px;"></span>
-  <br><br>
-  <span class="fa fa-cc-mastercard" aria-hidden="true" style="font-size: 40px; color:cadetblue"></span>
-  <span class="fa fa-cc-visa" aria-hidden="true" style="font-size: 40px; margin-left: 20px; color:cadetblue"></span>
-  <span class="fa fa-cc-paypal" aria-hidden="true" style="font-size: 40px; margin-left: 20px; color:cadetblue"></span>
-  <span class="fa fa-money" aria-hidden="true" style="font-size: 40px; margin-left: 20px; color:cadetblue"></span>
-  <span class="fa fa-cc-amex" aria-hidden="true" style="font-size: 40px; margin-left: 20px; color:cadetblue"></span>
+<footer role="contentinfo">
+    <style>
+      /* Estilos gerais do rodapé */
+      footer {
+        background-color: #DDDADA;
+        margin-top: 40px;
+        padding: 50px 0;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+      }
+      /* Listas para ícones sociais e de pagamento */
+      .social-icons,
+      .payment-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto 40px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .social-icons li,
+      .payment-icons li {
+        display: inline-block;
+      }
+      /* Aparência dos ícones */
+      .social-link i,
+      .payment-icons i {
+        font-size: 40px;
+        /* Se necessário, defina cores específicas aqui, evitando estilos inline */
+      }
+      /* Estilos para o texto de direitos autorais */
+      .footer-copy p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      /* Utilitário para esconder conteúdo visualmente sem perder acessibilidade */
+      .visually-hidden { 
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
   
-  <p style="margin-top: 250px;">Sorveteria Maranata</p>
-    
+    <div class="footer-container">
+      <!-- Seção de ícones sociais -->
+      <section class="social-media" aria-label="Ícones Sociais">
+        <h2 class="visually-hidden">Redes Sociais</h2>
+        <ul class="social-icons">
+          <li>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram" class="social-link">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube" class="social-link">
+              <i class="fa fa-youtube" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+  
+      <!-- Seção de meios de pagamento -->
+      <section class="payment-methods" aria-label="Meios de Pagamento">
+        <h2 class="visually-hidden">Meios de Pagamento</h2>
+        <ul class="payment-icons">
+          <li><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+          <li><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+          <li><i class="fa fa-cc-paypal" aria-hidden="true"></i></li>
+          <li><i class="fa fa-money" aria-hidden="true"></i></li>
+          <li><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+        </ul>
+      </section>
+  
+      <!-- Seção de direitos autorais -->
+      <section class="footer-copy">
+        <p>
+          Sorveteria Maranata<br>
+          <small>&copy; <span id="current-year"></span> Todos os direitos reservados.</small>
+        </p>
+      </section>
+    </div>
+  
+    <!-- Atualiza o ano atual via DOM, evitando document.write -->
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
   </footer>

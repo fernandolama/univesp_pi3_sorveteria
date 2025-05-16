@@ -50,7 +50,6 @@
 
 	$consultaVenda = $conexao->query("SELECT * FROM vendas
 	WHERE id_comprador='$id_user' GROUP BY ticket");
-	
 	?>
 	
 <div class="container-fluid">

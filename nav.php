@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
         <div class="container-fluid">
              <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,7 +63,7 @@
                     <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a>
                   </li>        
 
-                     <li><a href="#">Contato</a>
+                     <li><a href="formContato.php">Contato</a>
                      </li>
 
                       <?php
