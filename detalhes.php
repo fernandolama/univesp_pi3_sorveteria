@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -36,31 +35,19 @@
 <body>	
 	
 	<?php
-	
 	session_start();
-	
-    
-
 	include 'conexao.php';	
 	include 'nav.php';
-	include 'cabecalho.html';
-    
+	include 'cabecalho.html';   
     if(!empty($_GET['id'])) {
-
 	$id_prod = $_GET['id'];
-
-    $consulta = $conexao->query("SELECT * FROM produtos WHERE id='$id_prod'");
-
-    
-    $exibir=$consulta->fetch(PDO::FETCH_ASSOC);
-    
-    
+    $consulta = $conexao->query("SELECT * FROM produtos WHERE id='$id_prod'");   
+    $exibir=$consulta->fetch(PDO::FETCH_ASSOC); 
     } else { 
 
         echo "<html><script>location.href='index.php'</script></html>";
 
     }
-
 	?>
 	
 <div class="container-fluid">
@@ -117,9 +104,7 @@
       <button class="btn btn-lg btn-block btn-success">
       <span class="glyphicon glyphicon-usd">Comprar</span>
       </button>
-
       </a>
-
       <?php } else { ?>
       <button class="btn btn-lg btn-block btn-danger" disabled>
       <span class="glyphicon glyphicon-ban-circle"> Indisponivel</span>
@@ -133,9 +118,7 @@
 </div>
 	
 	<?php
-	
-	include 'rodape.html';
-	
+	include 'rodape.html';	
 	?>
 	
 </body>

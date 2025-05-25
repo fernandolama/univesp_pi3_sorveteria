@@ -34,9 +34,7 @@
 <body>	
 	
 	<?php
-	
 	session_start();
-	
 	if (empty($_SESSION['id'])) {
 		
 		header('location:formLogon.php');
@@ -51,8 +49,6 @@
 	$ticket_compra=$_GET['ticket'];
 	
 	$consultaVenda = $conexao->query("SELECT * FROM vendas WHERE ticket='$ticket_compra'");
-	
-	
 	?>
 	
 <div class="container-fluid">
@@ -78,14 +74,12 @@
 	
 	
 	<?php
-	
 	$total=0;
 			
 	while ($exibeVenda=$consultaVenda->fetch(PDO::FETCH_ASSOC)) {
 		
 		
 		$total += $exibeVenda['valor'] * $exibeVenda['quantidade'];
-	
 	?>
 	
 	<div class="row" style="margin-block-start: 15px;">
@@ -105,7 +99,7 @@
 	
 
 	
-	<?php } ?>
+	<?php }?>
 	
 	<div class="row" style="margin-block-start: 15px;">
 		<h2 class="text-center">Total desta compra: R$ <?php echo number_format($total,2,',','.');?></h2>
@@ -114,9 +108,7 @@
 </div>
 	
 	<?php
-	
 	include 'rodape.html';
-	
 	?>
 	
 </body>
