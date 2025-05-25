@@ -1,0 +1,29 @@
+name: PHP CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar o repositório
+      uses: actions/checkout@v3
+
+    - name: Instalar o PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: mbstring, pdo, sqlite
+        coverage: none
+
+    - name: Instalar dependências com Composer
+      run: composer install --no-progress --prefer-dist
+
+    - name: Rodar testes
+      run: vendor/bin/phpunit
