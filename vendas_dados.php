@@ -1,17 +1,5 @@
 <?php
-try {
-    $conexao = new PDO(
-        'mysql:host=localhost;dbname=gestao_sorveteria;charset=utf8',
-        'root',
-        '',
-        array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8')
-    );
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Erro na conexão:' . $e->getMessage() . '<br>';
-    echo 'Código do erro:' . $e->getCode();
-    exit;
-}
+include 'conexao.php';
 
 // Total de vendas por mês
 $sql = "SELECT DATE_FORMAT(v.data, '%Y-%m') AS mes, SUM(v.quantidade) AS total_vendas
